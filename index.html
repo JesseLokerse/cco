@@ -7,10 +7,11 @@
 </head>
 <body>
     <button onclick="startNieuwSpel()">Start Nieuw Spel</button>
+    <div id="response"></div>
 
     <script>
         async function startNieuwSpel() {
-            const functionEndpoint = 'https://ccojesselokerse3opeenrij.azurewebsites.net'; // Update this URL
+            const functionEndpoint = 'https://ccojesselokerse3opeenrij.azurewebsites.net/api/yourFunctionName?code=yourFunctionCode'; // Update this URL
 
             const requestOptions = {
                 method: 'POST',
@@ -32,7 +33,8 @@
                 try {
                     const data = await response.json();
                     console.log('Response van de Azure Function:', data);
-                    // Verwerk de ontvangen data indien nodig
+                    // Display the response on the web page
+                    document.getElementById('response').innerText = JSON.stringify(data, null, 2);
                 } catch (jsonError) {
                     console.error('Fout bij het parsen van de JSON respons:', jsonError);
                 }
