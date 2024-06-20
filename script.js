@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 async function startNieuwSpel() {
-    const functionEndpoint = 'https://ccojesselokerse.documents.azure.com:443/api/yourFunctionName?code=yourFunctionCode';
+    const functionEndpoint = 'https://ccojesselokerse3opeenrij.azurewebsites.net';
 
     const requestOptions = {
         method: 'POST',
