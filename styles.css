@@ -1,0 +1,26 @@
+.background {
+    background-color: gray;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Drie kolommen met gelijke breedte */
+    gap: 10px; /* Ruimte tussen de grid-items */
+    max-width: 600px; /* Optioneel: beperk de breedte van het grid */
+    margin: 0 auto; /* Optioneel: centreer het grid op de pagina */
+}
+.button {
+    margin: 10px;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    cursor: pointer; /* Voeg een cursor aanwijzer toe om aan te geven dat het element klikbaar is */
+}
+.button.red {
+    background-color: red;
+}
+.button.green {
+    background-color: green;
+}
