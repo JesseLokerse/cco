@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 async function startNieuwSpel() {
-    const functionEndpoint = 'https://ccojesselokerse.documents.azure.com:443/';
+    const functionEndpoint = 'https://ccojesselokerse.documents.azure.com:443/api/yourFunctionName?code=yourFunctionCode';
 
     const requestOptions = {
         method: 'POST',
@@ -14,6 +14,11 @@ async function startNieuwSpel() {
 
     try {
         const response = await fetch(functionEndpoint, requestOptions);
+
+        if (!response.ok) {
+            throw new Error(`Server responded with ${response.status}: ${response.statusText}`);
+        }
+
         const data = await response.json();
         console.log('Response van de Azure Function:', data);
         // Verwerk de ontvangen data indien nodig
