@@ -7,7 +7,6 @@
 </head>
 <body>
     <button onclick="startNieuwSpel()">Start Nieuw Spel</button>
-    <div id="response"></div>
 
     <script>
         async function startNieuwSpel() {
@@ -33,8 +32,7 @@
                 try {
                     const data = await response.json();
                     console.log('Response van de Azure Function:', data);
-                    // Display the response on the web page
-                    document.getElementById('response').innerText = JSON.stringify(data, null, 2);
+                    // Verwerk de ontvangen data indien nodig
                 } catch (jsonError) {
                     console.error('Fout bij het parsen van de JSON respons:', jsonError);
                 }
